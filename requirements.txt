@@ -6,3 +6,4 @@ pydantic-settings
 pydantic>=2.0
 pytest
 python-dotenv
+streamlit
