@@ -1,1 +1,34 @@
-{}
+{
+  "pantry": [
+    {"item": "chicken breast", "category": "protein", "quantity": 2, "unit": "lb", "expiration_date": "2026-07-03"},
+    {"item": "eggs", "category": "protein", "quantity": 12, "unit": "count", "expiration_date": "2026-07-15"},
+    {"item": "milk", "category": "dairy", "quantity": 1, "unit": "gallon", "expiration_date": "2026-07-05"},
+    {"item": "greek yogurt", "category": "dairy", "quantity": 4, "unit": "count", "expiration_date": "2026-07-08"},
+    {"item": "cheddar cheese", "category": "dairy", "quantity": 1, "unit": "block", "expiration_date": "2026-07-20"},
+    {"item": "spinach", "category": "vegetable", "quantity": 1, "unit": "bag", "expiration_date": "2026-07-02"},
+    {"item": "broccoli", "category": "vegetable", "quantity": 2, "unit": "head", "expiration_date": "2026-07-04"},
+    {"item": "carrots", "category": "vegetable", "quantity": 1, "unit": "lb", "expiration_date": "2026-07-12"},
+    {"item": "bell peppers", "category": "vegetable", "quantity": 3, "unit": "count", "expiration_date": "2026-07-06"},
+    {"item": "white rice", "category": "grain", "quantity": 5, "unit": "lb", "expiration_date": "2027-01-01"},
+    {"item": "rolled oats", "category": "grain", "quantity": 1, "unit": "container", "expiration_date": "2026-12-01"},
+    {"item": "whole wheat bread", "category": "grain", "quantity": 1, "unit": "loaf", "expiration_date": "2026-07-04"},
+    {"item": "pasta", "category": "grain", "quantity": 2, "unit": "box", "expiration_date": "2027-03-01"},
+    {"item": "peanut butter", "category": "pantry", "quantity": 1, "unit": "jar", "expiration_date": "2026-11-15"},
+    {"item": "almonds", "category": "pantry", "quantity": 1, "unit": "bag", "expiration_date": "2026-10-01"},
+    {"item": "olive oil", "category": "pantry", "quantity": 1, "unit": "bottle", "expiration_date": "2027-02-01"},
+    {"item": "soy sauce", "category": "pantry", "quantity": 1, "unit": "bottle", "expiration_date": "2027-06-01"},
+    {"item": "canned chickpeas", "category": "pantry", "quantity": 3, "unit": "can", "expiration_date": "2027-09-01"},
+    {"item": "canned tomatoes", "category": "pantry", "quantity": 4, "unit": "can", "expiration_date": "2027-08-01"},
+    {"item": "shrimp", "category": "protein", "quantity": 1, "unit": "lb", "expiration_date": "2026-07-01"},
+    {"item": "tofu", "category": "protein", "quantity": 1, "unit": "block", "expiration_date": "2026-07-07"},
+    {"item": "bananas", "category": "fruit", "quantity": 6, "unit": "count", "expiration_date": "2026-07-03"},
+    {"item": "apples", "category": "fruit", "quantity": 5, "unit": "count", "expiration_date": "2026-07-14"},
+    {"item": "lemons", "category": "fruit", "quantity": 4, "unit": "count", "expiration_date": "2026-07-18"},
+    {"item": "garlic", "category": "vegetable", "quantity": 1, "unit": "bulb", "expiration_date": "2026-08-01"},
+    {"item": "onions", "category": "vegetable", "quantity": 3, "unit": "count", "expiration_date": "2026-08-05"},
+    {"item": "butter", "category": "dairy", "quantity": 1, "unit": "lb", "expiration_date": "2026-08-10"},
+    {"item": "honey", "category": "pantry", "quantity": 1, "unit": "jar", "expiration_date": "2028-01-01"},
+    {"item": "salmon fillet", "category": "protein", "quantity": 1, "unit": "lb", "expiration_date": "2026-07-02"},
+    {"item": "quinoa", "category": "grain", "quantity": 1, "unit": "bag", "expiration_date": "2026-12-15"}
+  ]
+}
