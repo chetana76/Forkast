@@ -32,18 +32,7 @@ from observability.trace_logger import log_step, read_recent
 APP_NAME = "forkast"
 USER_ID  = "demo_user"
 
-@st.cache_resource(show_spinner="Initialising recipe index...")
-def init_rag():
-    """
-    Embed the recipe corpus into ChromaDB on first load.
-    Cached for the lifetime of the Streamlit session — runs once, not per request.
-    Required on Streamlit Community Cloud where disk state does not persist.
-    """
-    import sys
-    from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-    from rag.ingest import ingest
-    return ingest()
+
 
 st.set_page_config(page_title="Forkast", page_icon="🍴", layout="wide")
 
@@ -255,12 +244,13 @@ def render_trace_log():
     st.markdown(f'<div class="fk-card">{"".join(rows)}</div>', unsafe_allow_html=True)
 
 
-def build_message(profile: dict, request: str) -> str:
+def build_message(profile: dict, pantry: list, request: str) -> str:
     return (
         f"Profile — allergies: {profile['allergies'] or 'none'}, "
         f"diet: {profile['diet_type']}, "
         f"health: {profile['health_flags'] or 'none'}, "
         f"calories: {profile['calorie_target']}.\n"
+        f"Pantry items I have at home: {', '.join(pantry) or 'not specified'}.\n"
         f"Request: {request}"
     )
 
@@ -268,7 +258,7 @@ def build_message(profile: dict, request: str) -> str:
 # ─── Main ────────────────────────────────────────────────────────────────────
 
 def main():
-    init_rag()  # Ensure ChromaDB is populated before any agent call
+    
     st.markdown(
         '<div class="forkast-hero"><h1>🍴 Forkast</h1>'
         '<p>What\'s in your pantry, forecast into your next meal.</p></div>',
@@ -297,7 +287,27 @@ def main():
             "Request",
             placeholder="e.g. quick high-protein dinner using what's in my fridge",
             label_visibility="collapsed",
+        
         )
+        st.markdown("### 🧺 What's in your pantry?")
+        st.caption("Select what you have at home — we'll plan around it.")
+        pantry_options = [
+    "eggs", "chicken breast", "salmon fillet", "tofu",
+    "milk", "greek yogurt", "cheddar cheese", "butter",
+    "spinach", "broccoli", "carrots", "bell peppers",
+    "garlic", "onions", "tomatoes", "avocado",
+    "white rice", "pasta", "quinoa", "rolled oats",
+    "canned chickpeas", "canned tomatoes", "lentils",
+    "olive oil", "soy sauce", "honey", "almonds",
+    "lemons", "bananas", "apples",
+]
+        selected_pantry = st.multiselect(
+    "Pantry items",
+    pantry_options,
+    default=["eggs", "garlic", "onions", "olive oil", "canned chickpeas", "spinach"],
+    label_visibility="collapsed",
+)
+       
         generate = st.button("✨ Generate Meal Plan", type="primary", use_container_width=True)
 
     trace_slot  = st.empty()
@@ -316,8 +326,8 @@ def main():
         with st.spinner("Running pipeline: Intake → Inventory → Planner → Evaluator…"):
             try:
                 final_text, trace_rows = run_pipeline(
-                    build_message(profile, request), session_id
-                )
+                build_message(profile, selected_pantry, request), session_id
+      )
             except Exception as e:
                 final_text = f"⚠️ **Pipeline failed after all retries**\n\n`{e}`"
                 trace_rows = []

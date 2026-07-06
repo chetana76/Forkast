@@ -20,8 +20,11 @@ from security.schemas import SafeAgentProfile
 # Falls back gracefully if the installed ADK version has a different import path.
 try:
     from google.adk.code_executors import BuiltInCodeExecutor
-    _code_executor = BuiltInCodeExecutor()
-    _extra_tools = [_code_executor]
+    _code_executor = None  # disabled — cannot combine with FunctionTool in same agent
+    _extra_tools = [] # not a tool — passed separately as code_executor
+except ImportError:
+    _code_executor = None
+    _extra_tools = []
     _code_exec_note = (
         "\n5. Use code execution to calculate the exact calorie total by summing "
         "ingredient calorie estimates in Python — do not guess the total."
@@ -30,7 +33,7 @@ except ImportError:
     _extra_tools = []
     _code_exec_note = ""
 
-PLANNER_INSTRUCTION = f"""You are the Planner Agent for Forkast.
+PLANNER_INSTRUCTION = """You are the Planner Agent...
 
 Inputs available from session state:
 - `intake_constraints`: confirmed allergies, diet_type, health_flags, calorie_target
@@ -46,7 +49,7 @@ Your job:
    **Why this works for you:** [1-2 lines matching constraints]
    **Ingredients** (mark ✅ in pantry vs 🛒 need to buy)
    **Steps**
-   **Approximate calories:** [number]{_code_exec_note}
+   **Approximate calories:** [number]
 
 HARD RULES:
 - NEVER propose a recipe outside `retrieve_safe_recipes_tool`'s returned results.
@@ -88,8 +91,7 @@ def retrieve_safe_recipes_tool(
 
 
 def build_planner_agent() -> LlmAgent:
-    tools = [FunctionTool(retrieve_safe_recipes_tool)] + _extra_tools
-    return LlmAgent(
+    kwargs = dict(
         name="planner_agent",
         model=settings.PLANNER_MODEL,
         instruction=PLANNER_INSTRUCTION,
@@ -98,9 +100,12 @@ def build_planner_agent() -> LlmAgent:
             "Uses code execution (Antigravity) to calculate nutritional totals. "
             "Never approves own output."
         ),
-        tools=tools,
+        tools=[FunctionTool(retrieve_safe_recipes_tool)],
         output_key="planner_result",
     )
+    if _code_executor is not None:
+        kwargs["code_executor"] = _code_executor
+    return LlmAgent(**kwargs)
 
 
 planner_agent = build_planner_agent()
