@@ -10,13 +10,40 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import streamlit as st
 from google.adk.runners import InMemoryRunner
+
+# Support both local .env and Streamlit Community Cloud secrets
+def _load_api_key():
+    """Load GOOGLE_API_KEY from Streamlit secrets (cloud) or os.environ (local)."""
+    import os
+    try:
+        key = st.secrets.get("GOOGLE_API_KEY", "")
+        if key:
+            os.environ["GOOGLE_API_KEY"] = key
+            os.environ["GOOGLE_GENAI_USE_VERTEXAI"] = "FALSE"
+    except Exception:
+        pass  # Not on Streamlit Cloud — env vars already set by config/settings.py
+
+_load_api_key()
 from google.genai.types import Content, Part
 
 from agents.orchestrator import root_agent
 from observability.trace_logger import log_step, read_recent
 
 APP_NAME = "forkast"
-USER_ID = "demo_user"
+USER_ID  = "demo_user"
+
+@st.cache_resource(show_spinner="Initialising recipe index...")
+def init_rag():
+    """
+    Embed the recipe corpus into ChromaDB on first load.
+    Cached for the lifetime of the Streamlit session — runs once, not per request.
+    Required on Streamlit Community Cloud where disk state does not persist.
+    """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from rag.ingest import ingest
+    return ingest()
 
 st.set_page_config(page_title="Forkast", page_icon="🍴", layout="wide")
 
@@ -241,6 +268,7 @@ def build_message(profile: dict, request: str) -> str:
 # ─── Main ────────────────────────────────────────────────────────────────────
 
 def main():
+    init_rag()  # Ensure ChromaDB is populated before any agent call
     st.markdown(
         '<div class="forkast-hero"><h1>🍴 Forkast</h1>'
         '<p>What\'s in your pantry, forecast into your next meal.</p></div>',

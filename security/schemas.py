@@ -1,6 +1,6 @@
 from enum import Enum
 from typing import Optional
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, ConfigDict
 
 
 class Severity(str, Enum):
@@ -51,8 +51,7 @@ class UserProfile(BaseModel):
     diet_type: DietType = DietType.NONE
     calorie_target: Optional[int] = None
 
-    class Config:
-        frozen = True  # immutable once constructed
+    model_config = ConfigDict(frozen=True)  # immutable once constructed
 
 
 class SafeAgentProfile(BaseModel):

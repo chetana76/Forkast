@@ -1,102 +1,32 @@
 [
-  {
-    "id": "recipe_001",
-    "title": "Garlic Lemon Chicken with Broccoli",
-    "ingredients": ["chicken breast", "garlic", "lemon", "olive oil", "broccoli"],
-    "steps": [
-      "Season chicken breast with salt, pepper, and minced garlic.",
-      "Sear in olive oil over medium-high heat, 6-7 min per side.",
-      "Steam broccoli until tender-crisp, about 5 min.",
-      "Squeeze fresh lemon over chicken and broccoli before serving."
-    ],
-    "calories": 420,
-    "diet_tags": ["gluten_free", "high_protein"]
-  },
-  {
-    "id": "recipe_002",
-    "title": "Chickpea Spinach Curry",
-    "ingredients": ["canned chickpeas", "spinach", "onions", "garlic", "canned tomatoes", "olive oil"],
-    "steps": [
-      "Saute diced onion and garlic in olive oil until soft.",
-      "Add canned tomatoes and simmer 5 min.",
-      "Stir in chickpeas and cook 10 min.",
-      "Fold in spinach until wilted, season to taste."
-    ],
-    "calories": 380,
-    "diet_tags": ["vegan", "vegetarian", "gluten_free"]
-  },
-  {
-    "id": "recipe_003",
-    "title": "Shrimp Fried Rice",
-    "ingredients": ["shrimp", "white rice", "eggs", "carrots", "soy sauce", "garlic"],
-    "steps": [
-      "Cook rice and let cool (day-old rice works best).",
-      "Scramble eggs in a hot pan, set aside.",
-      "Stir-fry shrimp, garlic, and diced carrots until shrimp is pink.",
-      "Add rice, soy sauce, and scrambled eggs; toss to combine."
-    ],
-    "calories": 510,
-    "diet_tags": ["shellfish"]
-  },
-  {
-    "id": "recipe_004",
-    "title": "Overnight Oats with Honey and Almonds",
-    "ingredients": ["rolled oats", "milk", "honey", "almonds", "bananas"],
-    "steps": [
-      "Combine oats and milk in a jar, refrigerate overnight.",
-      "Top with sliced banana, honey, and chopped almonds before eating."
-    ],
-    "calories": 350,
-    "diet_tags": ["vegetarian", "tree_nuts"]
-  },
-  {
-    "id": "recipe_005",
-    "title": "Baked Salmon with Quinoa and Lemon",
-    "ingredients": ["salmon fillet", "quinoa", "lemon", "olive oil", "garlic"],
-    "steps": [
-      "Cook quinoa according to package instructions.",
-      "Season salmon with garlic, olive oil, salt, and pepper.",
-      "Bake salmon at 400F for 12-15 min until flaky.",
-      "Serve over quinoa with a squeeze of lemon."
-    ],
-    "calories": 460,
-    "diet_tags": ["gluten_free", "high_protein"]
-  },
-  {
-    "id": "recipe_006",
-    "title": "Tofu Stir-Fry with Bell Peppers",
-    "ingredients": ["tofu", "bell peppers", "carrots", "soy sauce", "garlic", "white rice"],
-    "steps": [
-      "Press and cube tofu, pan-fry until golden.",
-      "Stir-fry bell peppers and carrots until tender-crisp.",
-      "Add soy sauce and garlic, toss with tofu.",
-      "Serve over white rice."
-    ],
-    "calories": 400,
-    "diet_tags": ["vegan", "vegetarian", "soy"]
-  },
-  {
-    "id": "recipe_007",
-    "title": "Greek Yogurt Berry Parfait",
-    "ingredients": ["greek yogurt", "honey", "almonds", "apples"],
-    "steps": [
-      "Layer greek yogurt with diced apple in a glass.",
-      "Drizzle with honey and top with chopped almonds."
-    ],
-    "calories": 280,
-    "diet_tags": ["vegetarian", "tree_nuts", "dairy"]
-  },
-  {
-    "id": "recipe_008",
-    "title": "Pasta with Tomato and Garlic",
-    "ingredients": ["pasta", "canned tomatoes", "garlic", "olive oil", "onions"],
-    "steps": [
-      "Cook pasta until al dente.",
-      "Saute garlic and onion in olive oil.",
-      "Add canned tomatoes, simmer into a sauce, 10 min.",
-      "Toss pasta with sauce."
-    ],
-    "calories": 440,
-    "diet_tags": ["vegetarian", "vegan", "gluten"]
-  }
+  {"id":"recipe_001","title":"Garlic Lemon Chicken with Broccoli","ingredients":["chicken breast","garlic","lemon","olive oil","broccoli","salt","pepper"],"steps":["Season chicken with garlic, salt, pepper.","Sear in olive oil 6-7 min per side.","Steam broccoli 5 min.","Squeeze lemon over both before serving."],"calories":420,"diet_tags":["gluten_free","high_protein"]},
+  {"id":"recipe_002","title":"Chickpea Spinach Curry","ingredients":["canned chickpeas","spinach","onions","garlic","canned tomatoes","olive oil","cumin","turmeric"],"steps":["Sauté onion and garlic in olive oil.","Add tomatoes and simmer 5 min.","Stir in chickpeas, cook 10 min.","Fold in spinach until wilted."],"calories":380,"diet_tags":["vegan","vegetarian","gluten_free","diabetes_friendly"]},
+  {"id":"recipe_003","title":"Shrimp Fried Rice","ingredients":["shrimp","white rice","eggs","carrots","soy sauce","garlic","green onions"],"steps":["Cook and cool rice.","Scramble eggs, set aside.","Stir-fry shrimp, garlic, carrots.","Add rice, soy sauce, eggs. Toss."],"calories":510,"diet_tags":["shellfish","high_protein"]},
+  {"id":"recipe_004","title":"Overnight Oats with Honey and Almonds","ingredients":["rolled oats","milk","honey","almonds","bananas","cinnamon"],"steps":["Combine oats and milk in jar.","Refrigerate overnight.","Top with sliced banana, honey, almonds."],"calories":350,"diet_tags":["vegetarian","tree_nuts"]},
+  {"id":"recipe_005","title":"Baked Salmon with Quinoa","ingredients":["salmon fillet","quinoa","lemon","olive oil","garlic","dill","salt"],"steps":["Cook quinoa per package.","Season salmon with garlic, oil, salt, dill.","Bake 400F 12-15 min.","Serve over quinoa with lemon."],"calories":460,"diet_tags":["gluten_free","high_protein","heart_healthy"]},
+  {"id":"recipe_006","title":"Tofu Stir-Fry with Bell Peppers","ingredients":["tofu","bell peppers","carrots","soy sauce","garlic","ginger","white rice","sesame oil"],"steps":["Press and cube tofu, pan-fry golden.","Stir-fry peppers and carrots.","Add soy sauce, garlic, ginger.","Serve over rice with sesame oil."],"calories":400,"diet_tags":["vegan","vegetarian","soy"]},
+  {"id":"recipe_007","title":"Greek Yogurt Parfait","ingredients":["greek yogurt","honey","almonds","apples","granola","cinnamon"],"steps":["Layer yogurt with diced apple.","Add granola layer.","Drizzle honey, top with almonds and cinnamon."],"calories":280,"diet_tags":["vegetarian","tree_nuts","dairy","high_protein"]},
+  {"id":"recipe_008","title":"Pasta Marinara","ingredients":["pasta","canned tomatoes","garlic","olive oil","onions","basil","oregano"],"steps":["Cook pasta al dente.","Sauté garlic and onion in oil.","Add tomatoes and herbs, simmer 10 min.","Toss pasta with sauce."],"calories":440,"diet_tags":["vegetarian","vegan","gluten"]},
+  {"id":"recipe_009","title":"Egg and Vegetable Frittata","ingredients":["eggs","bell peppers","onions","spinach","cheddar cheese","olive oil","salt","pepper"],"steps":["Preheat oven 375F.","Sauté peppers, onions, spinach in ovenproof skillet.","Pour beaten eggs over vegetables.","Top with cheese, bake 15 min until set."],"calories":320,"diet_tags":["vegetarian","gluten_free","high_protein","eggs","dairy"]},
+  {"id":"recipe_010","title":"Lentil Soup","ingredients":["red lentils","carrots","onions","garlic","canned tomatoes","cumin","turmeric","olive oil","lemon"],"steps":["Sauté onion, garlic, carrots in oil.","Add lentils, tomatoes, spices, water.","Simmer 25 min until lentils soft.","Finish with lemon juice."],"calories":290,"diet_tags":["vegan","vegetarian","gluten_free","diabetes_friendly","heart_healthy","high_fiber"]},
+  {"id":"recipe_011","title":"Chicken Caesar Salad","ingredients":["chicken breast","romaine lettuce","parmesan","lemon","olive oil","garlic","anchovies","eggs"],"steps":["Grill chicken breast, slice thin.","Whisk lemon, garlic, oil, anchovy for dressing.","Toss romaine with dressing.","Top with chicken and parmesan."],"calories":380,"diet_tags":["gluten_free","high_protein","dairy","eggs"]},
+  {"id":"recipe_012","title":"Black Bean Tacos","ingredients":["canned chickpeas","black beans","bell peppers","onions","cumin","chili powder","lime","corn tortillas","avocado","salsa"],"steps":["Sauté peppers and onions with spices.","Add black beans, heat through.","Warm tortillas.","Fill with beans, top with avocado and salsa."],"calories":350,"diet_tags":["vegan","vegetarian","gluten_free","high_fiber","diabetes_friendly"]},
+  {"id":"recipe_013","title":"Mushroom Risotto","ingredients":["arborio rice","mushrooms","onions","garlic","white wine","vegetable broth","parmesan","butter","olive oil","thyme"],"steps":["Sauté mushrooms, set aside.","Soften onion and garlic in oil.","Add rice, toast 2 min.","Add wine, then broth ladle by ladle, stirring.","Finish with parmesan and butter."],"calories":480,"diet_tags":["vegetarian","gluten_free","dairy"]},
+  {"id":"recipe_014","title":"Tuna Avocado Bowl","ingredients":["canned tuna","avocado","white rice","cucumber","soy sauce","sesame oil","lemon","green onions","sesame seeds"],"steps":["Cook rice.","Mix tuna with soy sauce and sesame oil.","Slice avocado and cucumber.","Assemble bowl with rice, tuna, avocado, cucumber.","Garnish with green onions and sesame seeds."],"calories":430,"diet_tags":["gluten_free","high_protein","heart_healthy","dairy_free"]},
+  {"id":"recipe_015","title":"Vegetable Minestrone","ingredients":["carrots","onions","garlic","canned tomatoes","pasta","canned chickpeas","spinach","zucchini","olive oil","basil","parmesan"],"steps":["Sauté onion, garlic, carrots in oil.","Add tomatoes, chickpeas, water, bring to boil.","Add pasta, cook 10 min.","Stir in spinach and zucchini.","Top with parmesan and basil."],"calories":310,"diet_tags":["vegetarian","high_fiber","heart_healthy"]},
+  {"id":"recipe_016","title":"Peanut Butter Banana Smoothie","ingredients":["bananas","peanut butter","milk","honey","rolled oats","cinnamon"],"steps":["Blend all ingredients until smooth.","Add ice if desired.","Serve immediately."],"calories":420,"diet_tags":["vegetarian","peanuts","high_protein","dairy"]},
+  {"id":"recipe_017","title":"Baked Lemon Herb Cod","ingredients":["cod fillet","lemon","garlic","olive oil","parsley","capers","salt","pepper","white rice"],"steps":["Preheat oven 400F.","Place cod in baking dish with oil, lemon, garlic, capers.","Bake 12-15 min.","Serve over rice garnished with parsley."],"calories":360,"diet_tags":["gluten_free","high_protein","heart_healthy","dairy_free","low_sodium"]},
+  {"id":"recipe_018","title":"Keto Avocado Egg Salad","ingredients":["eggs","avocado","lemon","olive oil","dijon mustard","salt","pepper","celery","chives"],"steps":["Hard boil eggs, peel and chop.","Mash avocado with lemon and mustard.","Fold in eggs and celery.","Season, garnish with chives."],"calories":310,"diet_tags":["keto","gluten_free","vegetarian","high_protein","eggs","dairy_free","low_carb"]},
+  {"id":"recipe_019","title":"Halal Lamb Kebabs","ingredients":["lamb mince","onions","garlic","cumin","coriander","paprika","parsley","olive oil","lemon","pita bread"],"steps":["Mix lamb with spices, onion, garlic, parsley.","Shape onto skewers.","Grill 8-10 min turning.","Serve with pita and lemon."],"calories":520,"diet_tags":["halal","high_protein","gluten"]},
+  {"id":"recipe_020","title":"Vegan Buddha Bowl","ingredients":["quinoa","roasted chickpeas","sweet potato","kale","avocado","tahini","lemon","garlic","olive oil","sesame seeds"],"steps":["Roast cubed sweet potato 400F 20 min.","Roast chickpeas until crispy.","Cook quinoa.","Massage kale with oil and lemon.","Assemble bowl, drizzle tahini dressing."],"calories":490,"diet_tags":["vegan","vegetarian","gluten_free","high_fiber","diabetes_friendly","heart_healthy"]},
+  {"id":"recipe_021","title":"Turkey Meatball Soup","ingredients":["turkey mince","carrots","celery","onions","garlic","canned tomatoes","chicken broth","spinach","parmesan","breadcrumbs","eggs","olive oil"],"steps":["Mix turkey with breadcrumbs, egg, garlic, parmesan. Form meatballs.","Brown meatballs in oil.","Sauté vegetables, add broth and tomatoes.","Add meatballs, simmer 20 min.","Stir in spinach before serving."],"calories":340,"diet_tags":["high_protein","gluten","eggs","dairy"]},
+  {"id":"recipe_022","title":"Caprese Salad with Pesto","ingredients":["tomatoes","mozzarella","basil","olive oil","balsamic","garlic","pine nuts","salt","pepper"],"steps":["Slice tomatoes and mozzarella.","Layer alternating on plate.","Blend basil, garlic, pine nuts, oil for pesto.","Drizzle pesto and balsamic, season."],"calories":280,"diet_tags":["vegetarian","gluten_free","dairy","tree_nuts"]},
+  {"id":"recipe_023","title":"Spicy Shakshuka","ingredients":["eggs","canned tomatoes","bell peppers","onions","garlic","cumin","paprika","chili flakes","olive oil","feta","parsley"],"steps":["Sauté onion, peppers, garlic in oil with spices.","Add tomatoes, simmer 10 min.","Create wells, crack eggs in.","Cover and cook 8 min.","Top with feta and parsley."],"calories":310,"diet_tags":["vegetarian","gluten_free","high_protein","eggs","dairy"]},
+  {"id":"recipe_024","title":"Kosher Chicken Soup","ingredients":["chicken breast","carrots","celery","onions","garlic","parsley","dill","salt","pepper","matzo"],"steps":["Combine chicken and vegetables in large pot with water.","Bring to boil, skim foam.","Simmer 1.5 hours.","Remove chicken, shred.","Serve with matzo and fresh dill."],"calories":290,"diet_tags":["kosher","gluten_free","high_protein","low_fat","dairy_free"]},
+  {"id":"recipe_025","title":"Hypertension-Friendly Poached Salmon","ingredients":["salmon fillet","garlic","lemon","dill","cucumber","greek yogurt","capers","white rice"],"steps":["Poach salmon in water with lemon and dill 10 min.","Mix yogurt with garlic, cucumber, capers for sauce.","Cook rice without salt.","Serve salmon over rice with sauce."],"calories":390,"diet_tags":["gluten_free","high_protein","heart_healthy","low_sodium","hypertension_friendly"]},
+  {"id":"recipe_026","title":"Diabetic-Friendly Cauliflower Rice Bowl","ingredients":["cauliflower","tofu","broccoli","soy sauce","garlic","ginger","sesame oil","green onions","sesame seeds","edamame"],"steps":["Rice cauliflower in food processor.","Sauté tofu until golden.","Stir-fry cauliflower rice with garlic and ginger.","Add broccoli and edamame, cook 3 min.","Drizzle soy sauce and sesame oil."],"calories":260,"diet_tags":["vegan","vegetarian","gluten_free","keto","low_carb","diabetes_friendly","soy"]},
+  {"id":"recipe_027","title":"Sheet Pan Vegetables and Chickpeas","ingredients":["canned chickpeas","zucchini","bell peppers","onions","carrots","olive oil","cumin","paprika","garlic powder","lemon","parsley"],"steps":["Preheat oven 425F.","Toss chickpeas and vegetables with oil and spices.","Spread on sheet pan.","Roast 25-30 min until golden.","Finish with lemon and parsley."],"calories":330,"diet_tags":["vegan","vegetarian","gluten_free","high_fiber","diabetes_friendly","heart_healthy"]},
+  {"id":"recipe_028","title":"Almond Butter Energy Balls","ingredients":["rolled oats","almonds","almond butter","honey","dark chocolate chips","chia seeds","cinnamon","vanilla"],"steps":["Mix all ingredients in bowl.","Refrigerate 30 min.","Roll into balls.","Store in fridge up to 1 week."],"calories":180,"diet_tags":["vegetarian","gluten_free","tree_nuts","dairy_free","high_fiber"]},
+  {"id":"recipe_029","title":"Miso Glazed Eggplant","ingredients":["eggplant","white miso","soy sauce","garlic","ginger","sesame oil","honey","green onions","sesame seeds","white rice"],"steps":["Halve eggplant, score flesh.","Mix miso, soy, garlic, ginger, honey for glaze.","Brush glaze on eggplant.","Roast 400F 20-25 min.","Serve over rice with green onions."],"calories":310,"diet_tags":["vegan","vegetarian","gluten_free","soy","heart_healthy"]},
+  {"id":"recipe_030","title":"CKD-Friendly Apple Cinnamon Oatmeal","ingredients":["rolled oats","apples","cinnamon","honey","butter","vanilla","water"],"steps":["Cook oats with water as directed.","Dice apple, sauté in butter with cinnamon.","Stir apple mixture into oats.","Add honey and vanilla.","Serve warm."],"calories":280,"diet_tags":["vegetarian","ckd_friendly","low_sodium","low_potassium","gluten_free","heart_healthy"]}
 ]
