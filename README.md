@@ -13,10 +13,12 @@ cp .env.example .env  # fill in your GCP values
 ```
 
 ## Structure
-- `agents/` — Orchestrator, Intake, Inventory (MCP), Planner (RAG) agents
+- `agents/` — Orchestrator, Intake, Inventory (MCP), Planner (RAG), Evaluator (safety check) agents
 - `mcp_server/` — Mock pantry/grocery MCP server
-- `rag/` — Vertex AI Vector Search ingestion + retrieval
+- `rag/` — Local ChromaDB ingestion + retrieval (Google AI Studio embeddings, zero-cost)
 - `security/` — Profile guard, PII/allergen boundary enforcement
+- `observability/` — Local trace logging — zero-cost LangSmith-style observability
 - `config/` — Settings and agent config
+- `app/` — Streamlit dashboard
 - `tests/` — Unit tests
 - `notebooks/` — Kaggle submission notebook

@@ -57,9 +57,9 @@ class UserProfile(BaseModel):
 
 class SafeAgentProfile(BaseModel):
     """Redacted profile view — the ONLY shape agents are allowed to see."""
-    allergies: list[str]
-    severities: dict[str, Severity]
-    health_flags: list[str]
-    restricted_nutrients: list[str]
-    diet_type: DietType
+    allergies: list[str] = Field(default_factory=list)
+    severities: dict[str, Severity] = Field(default_factory=dict)
+    health_flags: list[str] = Field(default_factory=list)
+    restricted_nutrients: list[str] = Field(default_factory=list)
+    diet_type: DietType = DietType.NONE
     calorie_target: Optional[int] = None

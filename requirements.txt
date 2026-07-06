@@ -1,9 +1,9 @@
 google-adk
-google-cloud-aiplatform
 google-genai
-mcp
-pydantic-settings
+chromadb
 pydantic>=2.0
-pytest
+pydantic-settings
+mcp
 python-dotenv
+pytest
 streamlit

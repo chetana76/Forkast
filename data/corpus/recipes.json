@@ -1,0 +1,102 @@
+[
+  {
+    "id": "recipe_001",
+    "title": "Garlic Lemon Chicken with Broccoli",
+    "ingredients": ["chicken breast", "garlic", "lemon", "olive oil", "broccoli"],
+    "steps": [
+      "Season chicken breast with salt, pepper, and minced garlic.",
+      "Sear in olive oil over medium-high heat, 6-7 min per side.",
+      "Steam broccoli until tender-crisp, about 5 min.",
+      "Squeeze fresh lemon over chicken and broccoli before serving."
+    ],
+    "calories": 420,
+    "diet_tags": ["gluten_free", "high_protein"]
+  },
+  {
+    "id": "recipe_002",
+    "title": "Chickpea Spinach Curry",
+    "ingredients": ["canned chickpeas", "spinach", "onions", "garlic", "canned tomatoes", "olive oil"],
+    "steps": [
+      "Saute diced onion and garlic in olive oil until soft.",
+      "Add canned tomatoes and simmer 5 min.",
+      "Stir in chickpeas and cook 10 min.",
+      "Fold in spinach until wilted, season to taste."
+    ],
+    "calories": 380,
+    "diet_tags": ["vegan", "vegetarian", "gluten_free"]
+  },
+  {
+    "id": "recipe_003",
+    "title": "Shrimp Fried Rice",
+    "ingredients": ["shrimp", "white rice", "eggs", "carrots", "soy sauce", "garlic"],
+    "steps": [
+      "Cook rice and let cool (day-old rice works best).",
+      "Scramble eggs in a hot pan, set aside.",
+      "Stir-fry shrimp, garlic, and diced carrots until shrimp is pink.",
+      "Add rice, soy sauce, and scrambled eggs; toss to combine."
+    ],
+    "calories": 510,
+    "diet_tags": ["shellfish"]
+  },
+  {
+    "id": "recipe_004",
+    "title": "Overnight Oats with Honey and Almonds",
+    "ingredients": ["rolled oats", "milk", "honey", "almonds", "bananas"],
+    "steps": [
+      "Combine oats and milk in a jar, refrigerate overnight.",
+      "Top with sliced banana, honey, and chopped almonds before eating."
+    ],
+    "calories": 350,
+    "diet_tags": ["vegetarian", "tree_nuts"]
+  },
+  {
+    "id": "recipe_005",
+    "title": "Baked Salmon with Quinoa and Lemon",
+    "ingredients": ["salmon fillet", "quinoa", "lemon", "olive oil", "garlic"],
+    "steps": [
+      "Cook quinoa according to package instructions.",
+      "Season salmon with garlic, olive oil, salt, and pepper.",
+      "Bake salmon at 400F for 12-15 min until flaky.",
+      "Serve over quinoa with a squeeze of lemon."
+    ],
+    "calories": 460,
+    "diet_tags": ["gluten_free", "high_protein"]
+  },
+  {
+    "id": "recipe_006",
+    "title": "Tofu Stir-Fry with Bell Peppers",
+    "ingredients": ["tofu", "bell peppers", "carrots", "soy sauce", "garlic", "white rice"],
+    "steps": [
+      "Press and cube tofu, pan-fry until golden.",
+      "Stir-fry bell peppers and carrots until tender-crisp.",
+      "Add soy sauce and garlic, toss with tofu.",
+      "Serve over white rice."
+    ],
+    "calories": 400,
+    "diet_tags": ["vegan", "vegetarian", "soy"]
+  },
+  {
+    "id": "recipe_007",
+    "title": "Greek Yogurt Berry Parfait",
+    "ingredients": ["greek yogurt", "honey", "almonds", "apples"],
+    "steps": [
+      "Layer greek yogurt with diced apple in a glass.",
+      "Drizzle with honey and top with chopped almonds."
+    ],
+    "calories": 280,
+    "diet_tags": ["vegetarian", "tree_nuts", "dairy"]
+  },
+  {
+    "id": "recipe_008",
+    "title": "Pasta with Tomato and Garlic",
+    "ingredients": ["pasta", "canned tomatoes", "garlic", "olive oil", "onions"],
+    "steps": [
+      "Cook pasta until al dente.",
+      "Saute garlic and onion in olive oil.",
+      "Add canned tomatoes, simmer into a sauce, 10 min.",
+      "Toss pasta with sauce."
+    ],
+    "calories": 440,
+    "diet_tags": ["vegetarian", "vegan", "gluten"]
+  }
+]

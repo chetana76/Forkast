@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from google.cloud import aiplatform
+import chromadb
 
 from config.settings import settings
 from rag.embeddings import embed_text
@@ -14,41 +14,47 @@ class RetrievedDoc:
 
 
 class VectorStore:
-    """Thin wrapper over a deployed Vertex AI Vector Search index."""
+    """Local ChromaDB-backed vector store. Zero-cost replacement for Vertex AI Vector Search."""
 
     def __init__(self):
-        aiplatform.init(
-            project=settings.GOOGLE_CLOUD_PROJECT,
-            location=settings.GOOGLE_CLOUD_LOCATION,
+        self._client = chromadb.PersistentClient(path=settings.CHROMA_PERSIST_DIR)
+        self._collection = self._client.get_or_create_collection(
+            name=settings.CHROMA_COLLECTION_NAME,
+            metadata={"hnsw:space": "cosine"},
         )
-        self._endpoint = aiplatform.MatchingEngineIndexEndpoint(
-            index_endpoint_name=settings.VECTOR_ENDPOINT_ID
+
+    def upsert(self, doc_id: str, embedding: list[float], document: str, metadata: dict) -> None:
+        self._collection.upsert(
+            ids=[doc_id],
+            embeddings=[embedding],
+            documents=[document],
+            metadatas=[metadata],
         )
 
     def query(self, text: str, top_k: int = 5) -> list[RetrievedDoc]:
         query_vector = embed_text(text, task_type="RETRIEVAL_QUERY")
-        results = self._endpoint.find_neighbors(
-            deployed_index_id=settings.VECTOR_DEPLOYED_INDEX_ID,
-            queries=[query_vector],
-            num_neighbors=top_k,
+        results = self._collection.query(
+            query_embeddings=[query_vector],
+            n_results=top_k,
         )
-        neighbors = results[0] if results else []
+        ids = results.get("ids", [[]])[0]
+        distances = results.get("distances", [[]])[0]
+        metadatas = results.get("metadatas", [[]])[0]
         return [
-            RetrievedDoc(doc_id=n.id, distance=n.distance, metadata={})
-            for n in neighbors
+            RetrievedDoc(doc_id=i, distance=d, metadata=m or {})
+            for i, d, m in zip(ids, distances, metadatas)
         ]
 
     def query_with_filters(
         self, text: str, allergen_exclusions: list[str], top_k: int = 5
     ) -> list[RetrievedDoc]:
-        """Over-fetch then post-filter recipes containing excluded allergens by doc_id naming
-        convention (doc_id encodes ingredient slug). Replace with native numeric/restrict
-        filters once the index schema is finalized."""
+        """Over-fetch then post-filter recipes containing excluded allergens."""
         candidates = self.query(text, top_k=top_k * 3)
-        safe = [
-            d for d in candidates
-            if not any(allergen in d.doc_id.lower() for allergen in allergen_exclusions)
-        ]
+        safe = []
+        for d in candidates:
+            ingredients = " ".join(d.metadata.get("ingredients", [])).lower()
+            if not any(allergen in ingredients for allergen in allergen_exclusions):
+                safe.append(d)
         return safe[:top_k]
 
 

@@ -30,7 +30,7 @@ _mcp_toolset = MCPToolset(
 def build_inventory_agent() -> LlmAgent:
     return LlmAgent(
         name="inventory_agent",
-        model=settings.INTAKE_MODEL,
+        model=settings.INVENTORY_MODEL,
         instruction=INVENTORY_INSTRUCTION,
         description="Queries pantry/grocery stock via MCP. No access to user profile data.",
         tools=[_mcp_toolset],
